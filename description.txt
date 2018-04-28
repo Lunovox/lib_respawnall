@@ -1,0 +1,7 @@
+Salva o local de renascimento de todos os players. E pode criar formas individuais de de respawn para cada player.
+
+Licence: 
+ * GNU AGPL: https://pt.wikipedia.org/wiki/GNU_Affero_General_Public_License
+
+Developers:
+ * Lunovox <lunovox@openmailbox.org>
