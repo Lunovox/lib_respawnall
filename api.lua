@@ -1,7 +1,7 @@
 modRespawn = {}
 
-if minetest.setting_getbool("gohome_eatdust")~=true then
-	minetest.setting_set("gohome_eatdust","false")
+if core.setting_getbool("gohome_eatdust")~=true then
+	core.setting_setbool("gohome_eatdust", false)
 end
 
 minetest.register_privilege("gohome", "O jogador pode teleportar para o seu respawn.")
@@ -170,7 +170,7 @@ modRespawn.goHome = function(playername)
 				local toPos = nil
 	
 				local item = player:get_wielded_item()
-				if not minetest.setting_getbool("gohome_eatdust") or minetest.get_modpath("lunorecipes")==nil or item:get_name() == consumir then
+				if not core.setting_getbool("gohome_eatdust") or minetest.get_modpath("lunorecipes")==nil or item:get_name() == consumir then
 					if posRespawn~=nil and posRespawn~="" then
 						toPos = minetest.string_to_pos(posRespawn)
 					elseif posRespawnAll~=nil and posRespawnAll~="" then
@@ -183,9 +183,9 @@ modRespawn.goHome = function(playername)
 						--minetest.sound_play("sfx_teleporte", {pos=toPos, max_hear_distance = 10}) --toca som "sfx_teleporte".ogg a distancia de 10 blocos do usuario.
 			
 						if 
-							minetest.setting_getbool("gohome_eatdust")
+							core.setting_getbool("gohome_eatdust")
 							and minetest.get_modpath("lunomobs")~=nil
-							and not minetest.setting_getbool("creative_mode") 
+							and not core.setting_getbool("creative_mode") 
 							--and not minetest.check_player_privs(playername, {server=true}) 
 						then
 							item:take_item()
